@@ -1,0 +1,38 @@
+.bg-decat, .list-group-item.active {
+  background-color: rgb(17,119,178);
+}
+
+.color-white a{
+  color:white;
+  text-align: center;
+  width:100%;
+  margin:0 auto;
+}
+.center{
+  width:100%;
+  margin:0 auto;
+}
+
+.container.category, .container.products {
+  width:100%;
+  margin: 15px auto;
+}
+
+.container.product {
+  width:100%;
+  margin: 30px auto;
+}
+
+li:nth-child(even) {background: #FFF;}
+li:nth-child(odd) {background: #ededed;}
+
+.row.products {
+  float:left;
+  margin: 0 0 20px 0 ;
+}
+
+.checked {
+    color: orange;
+  }
+
+.row .card-deck .flex-348 {flex:0 0 348px;}

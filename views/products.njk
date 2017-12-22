@@ -1,0 +1,48 @@
+{% extends "home.njk" %}
+
+{% block content %}
+
+  {% set rowcount = 0 %}
+
+  <div class="container products">
+
+    {% for product in products %}
+
+      {% if rowcount === 0 %}
+
+        <div class="row products">
+          <div class="card-deck">
+          {% endif %}
+
+          <div class="card">
+            <a href="/products/{{ product.id }}"><img class="card-img-top" src="https://www.decathlon.fr/media/{{ product.image_path }}" alt="Card image cap"/></a>
+            <div class="card-body">
+              <h4 class="card-title">{{ product.title }}</h4>
+              <p class="card-text">{{ product.description }}</p>
+              <a href="/products/{{ product.id }}" class="btn btn-primary">View product details</a>
+            </div>
+            {% set rowcount = rowcount + 1 %}
+          </div>
+
+          {% if rowcount === 3 %}
+          </div>
+          {# end of card-group #}
+        </div>
+        {# end of row #}
+        {% set rowcount = 0 %}
+
+      {% endif %}
+
+    {% endfor %}
+
+    {% if rowcount !== 3 %}
+    </div>  {# end of card-deck #}
+  </div> {# end of row #}
+  {% set rowcount = 0 %}
+
+{% endif %}
+
+</div>
+{# end of container #}
+
+{% endblock %}

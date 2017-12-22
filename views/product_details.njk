@@ -1,0 +1,38 @@
+{% extends "home.njk" %}
+
+{% block content %}
+
+  <div class="container product">
+
+    <div class="row">
+      <div class="col-sm img-thumbnail m-2">
+        <img class="" src="https://www.decathlon.fr/media/{{ product.image_path }}"/>
+      </div>
+      <div class="col-sm m-2">
+
+        <h4>{{ product.title }}</h4>
+        <h5>{{ product.crossed_price }}€</h5>
+
+        {% for i in range (1,6) %}
+
+        {% if product.rating >= i %}
+        <span class="fa fa-star checked"></span>
+
+        {% else %}
+        <span class="fa fa-star"></span>
+
+        {% endif %}
+
+
+        {% endfor %}
+
+
+        <p>{{ product.description }}</p>
+
+      </div>
+    </div>
+
+  </div>
+  {# end of container #}
+
+{% endblock %}

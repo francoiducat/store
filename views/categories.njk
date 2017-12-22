@@ -1,0 +1,18 @@
+{% extends "home.njk" %}
+
+{% block content %}
+  <div class="container category">
+    <ul class="list-group">
+      <li class="list-group-item active">Categories</li>
+
+      {% for category in categories %}
+
+      <li class="list-group-item"><a href="/categories/{{ category.id }}/products">{{ category.label }}</a></li>
+
+    {% endfor %}
+
+    </ul>
+
+  </div>
+
+{% endblock %}
